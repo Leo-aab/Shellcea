@@ -7,7 +7,7 @@ char *Hist[100];
 
 void ShellInit(){
 	system ("clear");
-  	printf("welcome to my shell:) ");
+  	printf("welcome to my shell:)\n ");
 
 	
 }
@@ -78,11 +78,13 @@ int main() {
       }
       else //parent  process
         wait(NULL);
-     for (int i =0;args[i] !=NULL;i++)   
-      free(args);
-    	free(command);
+     for (int i =0;args[i] !=NULL;i++) {  
+      free(args[i]);
+    	
     }
+    free(args);
+    free(command);
     return 0;
 }
 }
-
+}
